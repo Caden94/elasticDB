@@ -1,3 +1,9 @@
+# system architecture
+1. ClientEmulator create clients (UserSession) as different threads.
+2. client (UserSession) ask LoadBalancer for the database ip address.
+3. LoadBalancer pass the available database(IP) to the client.
+4. client (UserSession) create connection to database and excute the query by using JDBC.
+
 # elasticDB node setup
 1. set master and slaves in set_env.sh
 2. make sure you have installed mysql on all the nodes in the queues. 
@@ -25,4 +31,3 @@
 # elasticDB monitor
 1. run ./enableMonitors.sh, this will run dstats and open windows for MASTER, SLAVE and CANDIDATE
 2. open your browser to point to monitorIp:8080/WebContent/elasticdb.jsp
-
