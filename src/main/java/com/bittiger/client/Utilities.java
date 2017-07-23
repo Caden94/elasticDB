@@ -28,6 +28,7 @@ public class Utilities {
 	
 	public static boolean scaleOut(String source, String target, String master)
 			throws InterruptedException, IOException {
+		// execute shell script
 		ProcessBuilder pb = new ProcessBuilder("/bin/bash",
 				"scripts/callScaleOut.sh", source, target, master);
 		pb.redirectErrorStream(true);
